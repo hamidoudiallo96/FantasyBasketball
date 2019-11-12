@@ -6,48 +6,78 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require 'rest-client'
-# require 'json'
+require 'rest-client'
+require 'json'
 
-# url = 'https://www.balldontlie.io/api/v1/stats'
-# response = RestClient.get(url)
-# data = JSON.parse(response)
-# p data
+url = 'https://www.balldontlie.io/api/v1/stats'
+response = RestClient.get(url)
+data_set = JSON.parse(response)
+# p data_set
 
-# User => first_name, last_name, user_name, email, password, team_id
-# Teams => name, location, user_id, tournament_id, player_id
-# Tournament =>  name
-# Players => api
+# player first_name, last_name, position
+player_data = data_set["data"].map do |data|
+  data["player"].select do |k,v|
+    if k == 'first_name'
+      first_name = v
+    elsif k == 'last_name'
+      last_name = v
+    elsif k == 'position'
+      position = v
+    end
+  end
+end
+
+player_points = []
+data_set["data"].each do |data|
+  data.select do |k,v|
+    if k == 'pts'
+       points = v
+       player_points << points
+    end
+  end
+end
+
+player_data.each do |item|
+  player_points.each do |point|
+    item[:pts] = point
+  end 
+end
 
 User.destroy_all
 Tournament.destroy_all
-Player.destroy_all
 Team.destroy_all
 
-# # User instance
-hami = User.create(
-  first_name: 'Hamidou', 
-  last_name: 'Diallo', 
-  user_name:'saiko124', 
-  email: 'dio.hamidou@gmail.com', 
-  password: 'password123'
-)
+# Players => api #DONE
+# Tournament =>  name => CREATE SEED DATA #DONE
+# User => first_name, last_name, user_name, email, password, team_id (LOGIN,SIGNUP, USER/NEW)
+# Teams => name, location, user_id, tournament_id, player_id => FORM(TEAMS/NEW)
+
+# User instances
+hami = User.create(first_name: "Hami", last_name: "Diallo", user_name: "HamiD", email: "hamid@yahoo.com", password: "password123")
+aniece = User.create(first_name: "Aniece", last_name: "Thompson", user_name: "AniT", email: "anit@yahoo.com", password: "p123456")
+ben = User.create(first_name: "Ben", last_name: "Frank", user_name: "BenF", email: "ben@gmail.com", password: "Benny123")
+sara = User.create(first_name: "Sara", last_name: "Gonzalez", user_name: "SaraG", email: "sara_g@outlook.com", password: "Winter2019")
+# hami = User.create(first_name: "Hami", last_name: "Diallo", user_name: "HamiD", email: "hamid@yahoo.com", password: "password123")
 
 # # Tournament instance
 nba_finals = Tournament.create(name:'NBA Finals')
+gold_glove = Tournament.create(name:'Gold Glove Tournament')
+seaside = Tournament.create(name:'Seaside Invitational')
+point_gods = Tournament.create(name:'Point Gods')
+smoking_3 = Tournament.create(name:'Smoking Threes')
+maui = Tournament.create(name:'Maui Invitational')
 
 # Player instance
-jordan = Player.create(
-  first_name: 'Michael', 
-  last_name: 'Jordan', 
-  position: 'SG', pts: 60
-)
+player_data.each do |player_hash|
+    player_stats = Player.create(first_name: player_hash["first_name"], last_name: player_hash["last_name"], position: player_hash["position"], pts: player_hash["pts"])
+end
 
-# # Team instance
+# Team Instance
 sharks = Team.create(
-  name: 'Dumbo Sharks', 
-  location: 'Dumbo', 
-  user:hami, 
-  tournament:nba_finals, 
-  player:jordan
+  name: 'Sharks',
+  location: 'Dumbo',
+  player: player_stats,
+  user: aniece,
+  tournament: maui
+
 )
