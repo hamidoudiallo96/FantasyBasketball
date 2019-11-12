@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  belongs_to :player
-  belongs_to :team
+  belongs_to :user
   belongs_to :tournament
+  belongs_to :player
 end
