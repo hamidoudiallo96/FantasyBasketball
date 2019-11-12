@@ -13,3 +13,8 @@ url = 'https://www.balldontlie.io/api/v1/stats'
 response = RestClient.get(url)
 data = JSON.parse(response)
 p data
+
+# User => first_name, last_name, user_name, email, password, team_id
+# Teams => name, location, user_id, tournament_id, player_id
+# Tournament =>  name
+# Players => api
