@@ -1,2 +1,4 @@
 class Hello
+
+  TEST
 end
