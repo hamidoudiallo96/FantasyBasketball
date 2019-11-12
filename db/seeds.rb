@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'rest-client'
+require 'json'
+
+url = 'https://www.balldontlie.io/api/v1/stats'
+response = RestClient.get(url)
+data = JSON.parse(response)
+p data
