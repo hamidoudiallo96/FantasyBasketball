@@ -1,4 +1,0 @@
-class Hello
-
-  TEST
-end
