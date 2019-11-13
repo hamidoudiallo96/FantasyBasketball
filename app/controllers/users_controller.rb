@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   before_action :set_users, only: [:show, :update, :edit, :destroy]
   
   def index
-
   end
   
   def new
@@ -18,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def show
-
   end
 
   def update
