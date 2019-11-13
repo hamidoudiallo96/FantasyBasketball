@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'sessions#index'
   resources :teams, only: [:index, :new, :create,:show,:edit,:update,:destroy]
   resources :players, only: [:index,:show]
   resources :tournaments

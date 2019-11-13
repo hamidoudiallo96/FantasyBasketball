@@ -6,6 +6,10 @@
 <li> Last Name: <%= @user.last_name%> </li>
 <li> Email: <%= @user.email%> </li>
 </ul>
+    <div class= 'modify-user'>
+        <%= button_to 'Edit', edit_user_path(@user.id) %>
+        <%= button_to 'Delete', sessions_path %>
+    </div>
 
 </div>
 
@@ -17,6 +21,6 @@
 
 <ul>List of Tournaments
     <% @user.teams.each do |team| %> 
-    <li><%= link_to team.tournament.name, tournament_path(team.tournament.id) %> </li>
+        <li><%= link_to team.tournament.name, tournament_path(team.tournament.id) %> </li>
      <% end %>
 </ul>

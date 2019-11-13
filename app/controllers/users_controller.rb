@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.destroy
-    redirect_to (home page)
+    redirect_to 
   end
 
   private
