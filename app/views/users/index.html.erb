@@ -1,1 +1,5 @@
 <h1>Hello World</h1>
+
+<%= @users.first.teams.tournament.each do |item| %>
+  <%= item.name %>
+<% end %>

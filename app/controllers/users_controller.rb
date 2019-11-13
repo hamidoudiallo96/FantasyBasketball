@@ -4,7 +4,9 @@ require 'json'
 class UsersController < ApplicationController
 
   def index
-    
+    @users = User.all
+    @users.first
+    byebug
   end
   private
     def set_users

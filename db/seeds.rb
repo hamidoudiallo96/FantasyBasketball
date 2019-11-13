@@ -10,9 +10,10 @@ require 'rest-client'
 require 'json'
 
 url = 'https://www.balldontlie.io/api/v1/stats'
+
 response = RestClient.get(url)
+
 data_set = JSON.parse(response)
-# p data_set
 
 # player first_name, last_name, position
 player_data = data_set["data"].map do |data|
@@ -42,10 +43,15 @@ player_data.each do |item|
     item[:pts] = point
   end 
 end
+puts ""
+p player_data[0]
+puts ""
 
-User.destroy_all
-Tournament.destroy_all
-Team.destroy_all
+ player1 = Player.create(first_name: player_data[0]["first_name"], last_name: player_data[0]["first_name"], position: player_data[0]["position"], pts:player_data[0]["pts"] )
+
+ # User.destroy_all
+# Tournament.destroy_all
+# Team.destroy_all
 
 # Players => api #DONE
 # Tournament =>  name => CREATE SEED DATA #DONE
@@ -57,7 +63,7 @@ hami = User.create(first_name: "Hami", last_name: "Diallo", user_name: "HamiD", 
 aniece = User.create(first_name: "Aniece", last_name: "Thompson", user_name: "AniT", email: "anit@yahoo.com", password: "p123456")
 ben = User.create(first_name: "Ben", last_name: "Frank", user_name: "BenF", email: "ben@gmail.com", password: "Benny123")
 sara = User.create(first_name: "Sara", last_name: "Gonzalez", user_name: "SaraG", email: "sara_g@outlook.com", password: "Winter2019")
-# hami = User.create(first_name: "Hami", last_name: "Diallo", user_name: "HamiD", email: "hamid@yahoo.com", password: "password123")
+
 
 # # Tournament instance
 nba_finals = Tournament.create(name:'NBA Finals')
@@ -68,8 +74,8 @@ smoking_3 = Tournament.create(name:'Smoking Threes')
 maui = Tournament.create(name:'Maui Invitational')
 
 # Player instance
-player_data.each do |player_hash|
-    player_stats = Player.create(first_name: player_hash["first_name"], last_name: player_hash["last_name"], position: player_hash["position"], pts: player_hash["pts"])
+all_player = player_data.each  do |player_hash|
+     Player.create(first_name: player_hash["first_name"], last_name: player_hash["last_name"], position: player_hash["position"], pts: player_hash["pts"])
 end
 
 # Team Instance
