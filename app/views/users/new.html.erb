@@ -1,0 +1,26 @@
+<h1>Create a Membership!</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label 'First Name' %><br>
+  <%= f.text_field :first_name %><br>
+ 
+  <%= f.label 'Last Name' %><br>
+  <%= f.text_area :last_name %><br>
+
+  <%= f.label 'Email' %><br>
+  <%= f.text_area :email %><br>
+
+  <%= f.label 'Username' %><br>
+  <%= f.text_area :user_name %><br>
+
+  <%= f.label 'Password' %><br>
+  <%= f.password_field :password %><br>
+ 
+  <%= f.submit "Create Account" %>
+<% end %>
+
+
+
+
+
+

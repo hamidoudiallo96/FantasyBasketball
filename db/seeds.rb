@@ -71,13 +71,6 @@ maui = Tournament.create(name:'Maui Invitational')
 player_data.each do |player_hash|
     player_stats = Player.create(first_name: player_hash["first_name"], last_name: player_hash["last_name"], position: player_hash["position"], pts: player_hash["pts"])
 end
-
+ 
 # Team Instance
-sharks = Team.create(
-  name: 'Sharks',
-  location: 'Dumbo',
-  player: player_stats,
-  user: aniece,
-  tournament: maui
-
-)
+sharks = Team.create( name: 'Sharks', location: 'Dumbo', player: wade , user: hami, tournament: nba_finals)

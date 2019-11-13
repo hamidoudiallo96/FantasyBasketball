@@ -1,0 +1,22 @@
+<h1> Welcome <%= @user.user_name %></h1>
+
+<div>
+<ul>User Information 
+<li> First Name: <%= @user.first_name%> </li>
+<li> Last Name: <%= @user.last_name%> </li>
+<li> Email: <%= @user.email%> </li>
+</ul>
+
+</div>
+
+<ul>List of Teams
+    <% @user.teams.each do |team| %> 
+    <li><%= link_to team.name, team %> </li>
+    <% end %>
+</ul>
+
+<ul>List of Tournaments
+    <% @user.teams.each do |team| %> 
+    <li><%= link_to team.tournament.name, tournament_path(team.tournament.id) %> </li>
+     <% end %>
+</ul>
