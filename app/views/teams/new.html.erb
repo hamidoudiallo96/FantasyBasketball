@@ -1,37 +1,31 @@
 <h1 id= "create-team">Create your team</h1>
 
-<div class= 'team-form'>
-  <%= form_for @team do |f|%>
-      <div class='team-info'>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+  <%= form_for @team, html:{class:'team-sign-up-form'} do |f|%>
+        <%= f.label 'Name', class: 'team-sign-up-labels' %><br>
+        <%= f.text_field :name, class: 'team-row-columns' %><br>
 
-        <%= f.label :location %>
-        <%= f.text_field :location %>
-      </div>
+        <%= f.label 'Location', class: 'team-sign-up-labels' %><br>
+        <%= f.text_field :location, class: 'team-row-columns' %><br>
 
-      <div class='player-draft'>
-        <%= f.label :player_id %>
-        <%= f.collection_select :player_id, Player.all, :id, :last_name%>
+        <%= f.label 'Player ID', class: 'team-sign-up-labels' %><br>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'collection'%><br>
 
-        <%= f.label :player_id %>
-        <%= f.collection_select :player_id, Player.all, :id, :last_name%>
+        <%= f.label 'Player ID', class: 'team-sign-up-labels' %><br>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'team-row-columns'%><br>
 
 
-        <%= f.label :player_id %>
-        <%= f.collection_select :player_id, Player.all, :id, :last_name%>
+        <%= f.label 'Player ID', class: 'team-sign-up-labels' %><br>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'team-row-columns'%><br>
 
 
-        <%= f.label :player_id %>
-        <%= f.collection_select :player_id, Player.all, :id, :last_name%>
+        <%= f.label 'Player ID', class: 'team-sign-up-labels' %><br>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'team-row-columns'%><br>
 
-        <%= f.label :player_id %>
-        <%= f.collection_select :player_id, Player.all, :id, :last_name%>
-      </div>
+        <%= f.label 'Player ID', class: 'team-sign-up-labels' %><br>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'team-row-columns'%><br>
 
-       <div class='tournament-pick'>
-        <%= f.label :tournament_id %>
-        <%= f.collection_select :tournament_id, Tournament.all, :id, :name %>
-      </div>
+        <%= f.label 'Tournament ID', class: 'team-sign-up-labels'%><br>
+        <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: 'team-row-columns' %><br>
+
+        <%= f.submit "Create Team", class: 'create-team-btn' %>
   <% end %>
-</div>
