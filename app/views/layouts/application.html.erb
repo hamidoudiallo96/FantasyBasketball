@@ -14,7 +14,13 @@
   </head>
 
   <body>
-    
+      <% if @current_user %>
+        Welcome, <%= @current_user.username %>!
+        <%= link_to "Logout", logout_path, method: :delete, class: "item" %>
+      <% else %>
+        <%= link_to "Signup", signup_path, class: "item" %>
+        <%= link_to "Login", login_path, class: "item" %>
+      <% end %>
       <%= yield %>
     
   </body>
