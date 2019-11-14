@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
+      session[:user_id] = @user.id
       redirect_to @user
     else
       redirect_to new_user_path
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.update(user_params)
-    redirect_to new_user_path
+    redirect_to user_path(@user.id)
   end
 
   def edit

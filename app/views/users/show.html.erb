@@ -1,10 +1,10 @@
-<h1> Welcome <%= @user.user_name %></h1>
+<h1> Welcome <%= @user.username %></h1>
 
 <div class="ui cards">
   <div class="card">
     <div class="content">
       <div class="header"><p>Name: <%= "#{@user.first_name} #{@user.last_name}" %></p></div>
-      <div class="meta"><p>Username: <%=@user.user_name %></p></div>
+      <div class="meta"><p>Username: <%=@user.username %></p></div>
       <div class="description">
         <p>Email: <%= @user.email %></p>
         <% @user.teams.each do |team| %> 
