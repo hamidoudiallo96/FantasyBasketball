@@ -1,15 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_users, only: [:index, :show, :update, :edit, :destroy]
-  # skip_before_action :authorized, only: [:new, :create]
-  
-  def index
-    # if logged_in?
-    #     @users = @current_user.songs
-    # else
-    #   @users = User.all # or force a login
-    # end
-    @users = User.all
-  end
+  before_action :set_users, only: [:show, :update, :edit, :destroy]
+  skip_before_action :authorized, only: [:new, :create]
   
   def new
     @user = User.new
@@ -39,6 +30,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.destroy
+    @current_user = nil
     # redirect_to 
   end
 
@@ -48,6 +40,10 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:first_name,:last_name,:user_name,:email,:password)
+      params.require(:user).permit(:first_name,:last_name,:username,:email,:password)
     end
+    
+    # def login_user_params
+    #   params.require(:user).permit(:username,:password)
+    # end
 end
