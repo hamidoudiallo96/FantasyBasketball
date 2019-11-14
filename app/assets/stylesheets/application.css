@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "semantic-ui";
+
+body{
+  background: url('https://images.adsttc.com/media/images/5b7c/c034/f197/cc6e/f200/034d/slideshow/090705_SHoP_Barclays_Center_pho_Bruce_Damonte_48.jpg?1534902317');
+  background-size: 100% ;
+  background-color: #4e5157;
+  background-blend-mode: screen;
+
+}
+
+

@@ -1,5 +1,7 @@
 class TeamsController < ApplicationController
   before_action :set_teams, only: [:show,:edit,:update,:destroy]
+  before_action :authorized
+  skip_before_action :authorized, only: [:new, :create]
   def index
     @teams = Team.all
   end
@@ -35,7 +37,6 @@ class TeamsController < ApplicationController
     end
 
     def team_params
-      #ask Ian about this
       params.require(:team).permit(:name,:location,:user_id,:player_id,:tournament_id) 
     end
 end

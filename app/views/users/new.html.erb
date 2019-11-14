@@ -1,26 +1,25 @@
-<h1>Create a Membership!</h1>
 
-<%= form_for @user do |f| %>
-  <%= f.label 'First Name' %><br>
-  <%= f.text_field :first_name %><br>
- 
-  <%= f.label 'Last Name' %><br>
-  <%= f.text_field :last_name %><br>
-
-  <%= f.label 'Email' %><br>
-  <%= f.text_field :email %><br>
-
-  <%= f.label 'Username' %><br>
-  <%= f.text_field :user_name %><br>
-
-  <%= f.label 'Password' %><br>
-  <%= f.password_field :password %><br>
- 
-  <%= f.submit "Create Account" %>
-<% end %>
+  <h1>Create a Membership!</h1>
 
 
+  <%= form_for @user, html:{class:'sign-up-form'} do |f| %>
+    <%= f.label 'First Name', class: 'sign-up-labels' %><br>
+    <%= f.text_field :first_name, class: 'row-columns' %><br>
+  
+    <%= f.label 'Last Name', class: 'sign-up-labels' %><br>
+    <%= f.text_field :last_name, class: 'row-columns' %><br>
 
+    <%= f.label 'Email', class: 'sign-up-labels' %><br>
+    <%= f.text_field :email, class: 'row-columns' %><br>
 
+    <%= f.label 'Username', class: 'sign-up-labels' %><br>
+    <%= f.text_field :user_name, class: 'row-columns' %><br>
 
+    <%= f.label 'Password', class: 'sign-up-labels' %><br>
+    <%= f.password_field :password, class: 'row-columns' %><br/>
 
+     <!-- <%= f.label :password_confirmation ,class: 'sign-up-labels' %> <br/>
+    <%= f.text_field :password_confirmation ,class: 'row-columns' %> <br/> -->
+
+    <%= f.submit "Create Account", class: 'sign-up-btn' %>
+  <% end %>

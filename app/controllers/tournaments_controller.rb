@@ -1,5 +1,6 @@
 class TournamentsController < ApplicationController
   before_action :set_tournaments, only: [:show]
+  skip_before_action :authorized, only: [:new, :create]
   def index
     @tournaments = Tournament.all
   end
