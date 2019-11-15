@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   #players  routes
   resources :players, only: [:index,:show]
   # tournaments routes
-  resources :tournaments, only: [:index, :show]
+  resources :tournaments, only: [:index, :new,  :show]
 
   resources :sessions
   

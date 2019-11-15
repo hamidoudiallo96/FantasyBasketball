@@ -1,10 +1,10 @@
 <div class="ui card">
     <div class="content">
-      <div class="header"><%= "#{@player.first_name} #{@player.last_name}" %></div>
+      <div class="header"><%= "#{@current_user.teams.player.first_name} #{@player.last_name}" %></div>
       <div class="meta"></div>
       <div class="description">
-        <p>Position: <%= @player.position %></p>
-        <p>Points: <%= @player.pts %></p>
+        <p>Position: <%= @current_user.teams.player.position %></p>
+        <p>Points: <%= @current_user.teams.player.pts %></p>
       </div>
     </div>
   </div>
