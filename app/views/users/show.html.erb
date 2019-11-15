@@ -7,14 +7,18 @@
       <div class="meta"><p>Username: <%=@user.username %></p></div>
       <div class="description">
         <p>Email: <%= @user.email %></p>
+      </div>
+      <div class="description">
         <% @user.teams.each do |team| %> 
             <p>Teams: <%= link_to team.name, team %></p>
         <% end %>
+      </div>
+      <div class="description">
         <% @user.teams.each do |team| %> 
             <p>Tournaments: <%= link_to team.tournament.name, tournament_path(team.tournament.id) %> </p>
         <% end %>
-
       </div>
+
       <div class= 'modify-user'>
         <%= button_to 'Edit', edit_user_path(@user.id), id:'user-edit-btn' %>
         <%= button_to 'Delete', user_path, id:'user-delete-btn' %>

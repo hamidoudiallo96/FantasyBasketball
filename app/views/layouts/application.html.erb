@@ -14,12 +14,30 @@
   </head>
 
   <body>
-      <% if @current_user %>
-        Welcome, <%= @current_user.username %>!
-        <%= link_to "Logout", logout_path, method: :delete, class: "item" %>
-      <% else %>
+      <!-- NavBar -->
+      <div class = 'navbar'>
+        <h1 id='Logo'>WeBigBallers</h1>
+      <div class="ui secondary pointing menu">
+
+        <%= link_to 'Home', root_path, class: 'item' %>
+
+        <%= link_to 'Teams', teams_path, class: 'item' %>
+
+        <%= link_to 'Tournaments', tournaments_path, class: 'item' %>
+
+        <%= link_to 'Players', players_path, class: 'item' %>
         <%= link_to "Signup", signup_path, class: "item" %>
         <%= link_to "Login", login_path, class: "item" %>
+      </div>
+      
+      </div>
+
+
+      <% if @current_user %>
+        Welcome, <%= @current_user.username %>!
+        <h1>WeBigBallers</h1>
+      <% else %>
+        Sorry, You are not welcome here!
       <% end %>
       <%= yield %>
     

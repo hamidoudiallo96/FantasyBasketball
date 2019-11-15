@@ -9,6 +9,11 @@ h1{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-style: oblique;
   font-size: 2.9rem;
+  color: silver;
+}
+h1:hover{
+  color:crimson;
+
 }
 .sign-up-form{
   display: flex;
@@ -25,6 +30,7 @@ h1{
     width: 60%;
     border-radius: 20px;
     text-align: center;
+    font-size: 1.5rem;
   }
 
   .sign-up-labels{
@@ -56,12 +62,19 @@ h1{
   margin-left: 500px;
   font-size: 1.5rem;
   border-radius: 20px;
+  border: 10px outset #4d07f0;
+  
 
   .content{
     padding-top: 20px;
     font-family: monospace;
     color: magenta;
+    
   }
+  .content:hover{
+      color: silver;
+    }
+
 
   .modify-user{
     display: flex;
@@ -80,4 +93,9 @@ h1{
       margin-bottom: 20px;
     }
   }
+  
+}
+.card:hover{
+     background-color: #4d07f0 ;
+     border-color: magenta;
 }

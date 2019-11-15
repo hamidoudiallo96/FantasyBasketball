@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_users, only: [:show, :update, :edit, :destroy]
+  before_action :set_users, only: [:show, :update, :edit]
   skip_before_action :authorized, only: [:new, :create]
   
   def new
@@ -26,14 +26,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
-  def destroy
-    @user = User.destroy
-    @current_user = nil
-    # redirect_to 
-  end
+  
 
   private
     def set_users

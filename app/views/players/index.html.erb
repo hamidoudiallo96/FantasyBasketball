@@ -1,10 +1,14 @@
 <h1>Players</h1>
 
-<div>
-  <% @players.each do |player| %>
-  <p>First Name: <%= player.first_name %></p>
-  <p>Last Name: <%= player.last_name %></p>
-  <p>Position: <%= player.position %></p>
-  <p>Points:<%= player.pts %></p>
-  <% end %>
-</div>
+<% @players.each do |player| %>
+  <div class="ui card">
+    <div class="content">
+      <div class="header"><%= "#{player.first_name} #{player.last_name}" %></div>
+      <div class="meta"></div>
+      <div class="description">
+        <p>Position: <%= player.position %></p>
+        <p>Points: <%= player.pts %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
