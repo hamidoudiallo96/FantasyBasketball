@@ -1,3 +1,20 @@
-<%= @team.name %>
-<br/>
-<%= @team.location %>
+<div class="ui card">
+    <div class="content">
+    <% unless @current_user.teams.empty?%>
+    <% @current_user.teams.each do |team|  %>
+      <div class="header"><p>Location: <%= team.location %> </p></div>
+      <div class="meta"></div>
+      <div class="description">
+        <p>Name: <%= team.name %></p>
+        <% if team.tournament%>
+        <p>Tournament: <%= link_to team.tournament.name, team.tournament, id:"link-color"%> </p>
+        <% end %>
+        <% end %>
+        <% end %>
+
+        <%= button_to 'Edit', edit_team_path, method: :get %>
+        <%= button_to 'Delete', edit_team_path, method: :delete %>
+        
+      </div>
+    </div>
+  </div>

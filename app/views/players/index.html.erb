@@ -1,6 +1,6 @@
 <h1>Players</h1>
 
-<% @players.each do |player| %>
+<% @current_user.teams.players.each do |player| %>
   <div class="ui card">
     <div class="content">
       <div class="header"><%= "#{player.first_name} #{player.last_name}" %></div>

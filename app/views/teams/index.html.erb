@@ -1,5 +1,12 @@
-<% @teams.all.each do |team| %>
-  <%= team.name %>
-  <br/>
-  <%= team.location %>
+<% @current_user.teams.each do |team| %>
+  <div class="ui card">
+    <div class="content">
+      <div class="header"><p>Location: <%= team.location %></p></div>
+      <div class="meta"></div>
+      <div class="description">
+        <p>Name: <%= team.name %></p>
+        <%= button_to 'Team', team_path(team.id), method: :get %>
+      </div>
+    </div>
+  </div>
 <% end %>

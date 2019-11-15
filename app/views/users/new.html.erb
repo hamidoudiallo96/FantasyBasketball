@@ -1,7 +1,4 @@
 
-  <h1>Create a Membership!</h1>
-
-
   <%= form_for @user, html:{class:'sign-up-form'} do |f| %>
     <%= f.label 'First Name', class: 'sign-up-labels' %><br>
     <%= f.text_field :first_name, class: 'row-columns' %><br>
@@ -19,7 +16,7 @@
     <%= f.password_field :password, class: 'row-columns' %><br/>
 
     <%= f.label :password_confirmation ,class: 'sign-up-labels' %> <br/>
-    <%= f.text_field :password_confirmation ,class: 'row-columns' %> <br/>
+    <%= f.password_field:password_confirmation ,class: 'row-columns' %> <br/>
 
     <%= f.submit "Create Account", class: 'sign-up-btn' %>
   <% end %>
