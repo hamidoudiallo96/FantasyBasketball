@@ -1,0 +1,37 @@
+<h1 id= "create-team">Edit Team</h1>
+
+<div class= 'team-form'>
+  <%= form_for @team do |f|%>
+      
+        <%= f.label :name, class: 'sign-up-labels' %>
+        <%= f.text_field :name, class:'row-columns' %>
+
+        <%= f.label :location, class: 'sign-up-labels'  %>
+        <%= f.text_field :location, class: 'row-columns' %>
+ 
+
+
+        <%= f.label :player_id, class: 'sign-up-labels' %>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'row-columns'%>
+
+        <%= f.label :player_id class: 'sign-up-labels' %>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'row-columns'%>
+
+
+        <%= f.label :player_id class: 'sign-up-labels' %>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'row-columns'%>
+
+
+        <%= f.label :player_id, class: 'sign-up-labels' %>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'row-columns'%>
+
+        <%= f.label :player_id, class: 'sign-up-labels'  %>
+        <%= f.collection_select :player_id, Player.all, :id, :last_name, class: 'row-columns' %>
+
+        <%= f.label :tournament_id class: 'sign-up-labels' %>
+        <%= f.collection_select :tournament_id, Tournament.all, :id, :name, class: 'row-columns' %>
+    
+
+
+  <% end %>
+</div>

@@ -24,4 +24,36 @@ body{
 
 }
 
+.navbar{
+  display:flex;
+  margin: 20px;
+}
+#Logo{
+  font-size: 1.8rem;
+  margin-right: 100px;
+  
+}
+.menu{
+  display:flex;
+  margin-top: 30px;
+}
+.item{
+  padding-left: 50px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: silver;
+  font-size: 1.3rem;
+}
+.item:hover{
+  color:crimson;
+  font-weight: 500px;
+}
+
+
+
+
+
+
+
+
 
