@@ -33,12 +33,14 @@
       </div>
 
 
-      <% if @current_user %>
-        Welcome, <%= @current_user.username %>!
-        <h1>WeBigBallers</h1>
-      <% else %>
-        Sorry, You are not welcome here!
-      <% end %>
+      <div class='home-view'>
+        <% if @current_user %>
+          Welcome, <%= @current_user.username %>!
+          <h1>WeBigBallers</h1>
+        <% else %>
+          Sorry, You are not welcome here!
+        <% end %>
+      </div>
       <%= yield %>
     
   </body>

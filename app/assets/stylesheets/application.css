@@ -50,6 +50,20 @@ body{
 }
 
 
+.home-view{
+  text-align: center;
+  font-weight: 500;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: oblique;
+  font-size: 2.9rem;
+  color: silver;
+  margin-top: 200px;
+}
+.home-view:hover{
+  color:crimson;
+
+}
+
 
 
 

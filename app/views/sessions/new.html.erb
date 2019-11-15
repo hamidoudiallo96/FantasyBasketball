@@ -1,5 +1,7 @@
 <h1>Login Page</h1>
-
+<% if flash[:errors]%>
+  <p><%= flash[:errors] %></p>
+<% end%>
 
 <%= form_for :session, url: "/login", html:{class:'login-form'} do |f| %> 
 
@@ -13,6 +15,3 @@
 
 <% end %>
 
-<% if flash[:errors]%>
-  <p><%= flash[:errors] %></p>
-<% end%>
