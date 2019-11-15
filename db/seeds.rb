@@ -59,10 +59,10 @@ puts ""
 # Teams => name, location, user_id, tournament_id, player_id => FORM(TEAMS/NEW)
 
 # User instances
-hami = User.create(first_name: "Hami", last_name: "Diallo", user_name: "HamiD", email: "hamid@yahoo.com", password: "password123")
-aniece = User.create(first_name: "Aniece", last_name: "Thompson", user_name: "AniT", email: "anit@yahoo.com", password: "p123456")
-ben = User.create(first_name: "Ben", last_name: "Frank", user_name: "BenF", email: "ben@gmail.com", password: "Benny123")
-sara = User.create(first_name: "Sara", last_name: "Gonzalez", user_name: "SaraG", email: "sara_g@outlook.com", password: "Winter2019")
+# hami = User.create(first_name: "Hami", last_name: "Diallo", user_name: "HamiD", email: "hamid@yahoo.com", password: "password123")
+# aniece = User.create(first_name: "Aniece", last_name: "Thompson", user_name: "AniT", email: "anit@yahoo.com", password: "p123456")
+# ben = User.create(first_name: "Ben", last_name: "Frank", user_name: "BenF", email: "ben@gmail.com", password: "Benny123")
+# sara = User.create(first_name: "Sara", last_name: "Gonzalez", user_name: "SaraG", email: "sara_g@outlook.com", password: "Winter2019")
 
 
 # # Tournament instance

@@ -1,3 +1,56 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1{
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: 500;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: oblique;
+  font-size: 2.9rem;
+  color: silver;
+}
+h1:hover{
+  color:crimson;
+
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #ced9eb ;
+  border-radius: 10%;
+  width: 50%;
+  margin-left: 330px;
+
+  .row-columns{
+    padding: 10px;
+    width: 60%;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .login-labels{
+    font-size: 1.8rem;
+  }
+
+  .login-btn{
+    margin-top: 10px;
+    border-radius: 20px;
+    width: 40%;
+    background: crimson;
+    color: whitesmoke;
+    padding: 20px 0px 20px 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    transition-duration: 2s;
+  }
+  .login-btn:hover{
+    background: whitesmoke;
+    color: crimson;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+}
